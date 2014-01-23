@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D5394EF318910E2200CFCBF1 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D5394EF218910E2200CFCBF1 /* MapViewController.m */; };
 		D5F80D801889841C0063E18D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5F80D7F1889841C0063E18D /* Foundation.framework */; };
 		D5F80D821889841C0063E18D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5F80D811889841C0063E18D /* CoreGraphics.framework */; };
 		D5F80D841889841C0063E18D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5F80D831889841C0063E18D /* UIKit.framework */; };
@@ -38,6 +39,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D5394EF118910E2200CFCBF1 /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
+		D5394EF218910E2200CFCBF1 /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
 		D5F80D7C1889841C0063E18D /* MU107HW2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MU107HW2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5F80D7F1889841C0063E18D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		D5F80D811889841C0063E18D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -132,6 +135,8 @@
 				D5F80D911889841C0063E18D /* Main.storyboard */,
 				D5F80D941889841C0063E18D /* ViewController.h */,
 				D5F80D951889841C0063E18D /* ViewController.m */,
+				D5394EF118910E2200CFCBF1 /* MapViewController.h */,
+				D5394EF218910E2200CFCBF1 /* MapViewController.m */,
 				D5F80D971889841C0063E18D /* Images.xcassets */,
 				D5F80D861889841C0063E18D /* Supporting Files */,
 			);
@@ -296,6 +301,7 @@
 				D5F80DBB18898BAE0063E18D /* Route.m in Sources */,
 				D5F80DB7188985130063E18D /* User.m in Sources */,
 				D5F80DBF18898C920063E18D /* Vehicle.m in Sources */,
+				D5394EF318910E2200CFCBF1 /* MapViewController.m in Sources */,
 				D5F80D961889841C0063E18D /* ViewController.m in Sources */,
 				D5F80D901889841C0063E18D /* AppDelegate.m in Sources */,
 				D5F80DC218898D140063E18D /* Bus.m in Sources */,
@@ -508,6 +514,7 @@
 				D5F80DB01889841C0063E18D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D5F80DB11889841C0063E18D /* Build configuration list for PBXNativeTarget "MU107HW2Tests" */ = {
 			isa = XCConfigurationList;
@@ -516,6 +523,7 @@
 				D5F80DB31889841C0063E18D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
