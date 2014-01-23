@@ -7,7 +7,6 @@
 //
 
 #import "MapViewController.h"
-#import <QuartzCore/QuartzCore.h>
 
 @interface MapViewController ()
 
