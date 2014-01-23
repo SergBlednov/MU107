@@ -20,7 +20,7 @@
     return user;
 }
 
-- (void)login:(NSString *)name {
-    NSLog(@"User %@ tried to login!", name);
+- (void)login {
+    NSLog(@"User %@ tried to login!", self.username);
 }
 @end

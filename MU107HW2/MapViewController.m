@@ -37,10 +37,9 @@
 }
 - (IBAction)actionLongTouch:(UILongPressGestureRecognizer *)sender {
     // Message after touching
-    if ([sender state] == UIGestureRecognizerStateBegan) {
-        NSLog(@"%d", sender.state);
-        NSLog(@"The map was touched!!"); 
-    }
+//    if ([sender state] == UIGestureRecognizerStateBegan) {
+        NSLog(@"The map was touched!!");
+//    }
 }
 
 @end

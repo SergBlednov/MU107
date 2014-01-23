@@ -41,7 +41,7 @@
     NSLog(@"User's login: %@", user.username);
     NSLog(@"User's password: %@", user.password);
     
-    [user login:user.username];
+    [user login];
     
 }
 

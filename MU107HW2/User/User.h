@@ -15,6 +15,6 @@
 
 + (User *)userWithName:(NSString *)name andPassword:(NSString *)passsword;
 
-- (void)login:(NSString *)name;
+- (void)login;
 
 @end
