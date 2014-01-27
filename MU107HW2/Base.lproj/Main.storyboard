@@ -223,7 +223,7 @@
         <!--Navigation Controller-->
         <scene sceneID="EWj-Vp-NEk">
             <objects>
-                <navigationController definesPresentationContext="YES" id="5dc-eX-Xpm" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="AuthNavigationController" definesPresentationContext="YES" id="5dc-eX-Xpm" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="5m3-fa-KWG">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

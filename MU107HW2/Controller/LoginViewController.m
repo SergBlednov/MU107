@@ -21,7 +21,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+    
+    self.navigationController.navigationBarHidden = YES;
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -43,12 +44,9 @@
     // Create the user with name (login) and password
     User *user = [User userWithName:self.txtLogin.text andPassword:self.txtPassword.text];
     
-    // 
-    NSLog(@"User's login: %@", user.username);
-    NSLog(@"User's password: %@", user.password);
-    
     [user login];
     
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 @end
