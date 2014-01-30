@@ -8,13 +8,13 @@
 
 #import "RoutesViewController.h"
 #import "Route.h"
+#import "MarshrutkiApi.h"
 
-#import <AFNetworking.h>
 #import "MBProgressHUD.h"
 
 @interface RoutesViewController ()
 
-@property (strong, nonatomic) NSMutableArray * routes;
+@property (strong, nonatomic) NSArray *routes;
 
 @end
 
@@ -23,28 +23,12 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
-    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
- 
-    [MBProgressHUD showHUDAddedTo:self.tableView animated:YES];
-    
-    [manager GET:@"http://marshrutki.com.ua/mu/routes.php" parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        NSLog(@"JSON: %@", responseObject);
-        
-        NSArray *rawRoutes = (NSArray *)responseObject;
-        self.routes = [[NSMutableArray alloc] init];
-        
-        for (NSDictionary *attributes in rawRoutes) {
-            [self.routes addObject:[Route initRouteWithDictionary:attributes]];
-        }
-        
-        [MBProgressHUD hideAllHUDsForView:self.tableView animated:YES];
+    [[MarshrutkiApi sharedClient] getRoutes:^(NSArray *routes, NSError *error) {
+        self.routes = routes;
         [self.tableView reloadData];
-        
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        [MBProgressHUD hideAllHUDsForView:self.tableView animated:YES];
-        NSLog(@"Error: %@", error);
-    }];
+    } params:nil];
+
+
 }
 
 - (void)didReceiveMemoryWarning
@@ -55,9 +39,18 @@
 
 #pragma mark - Table view data source
 
+-(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 2;
+}
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return self.routes.count;
+    if(section == 0) {
+        return 3;
+    } else {
+        return self.routes.count;
+    }
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -70,11 +63,13 @@
     return cell;
 }
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    [tableView deselectRowAtIndexPath:indexPath animated:NO];
-//    [[self navigaionController] pushViewController:LoginViewController animated:YES];
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    Route *route = (Route *)self.routes[indexPath.row];
+    NSMutableDictionary *userInfo = [[NSMutableDictionary alloc] init];
+    [userInfo setValue:route forKey:@"chosenRoute"];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"chosenRoute" object:self userInfo:userInfo];
+    
 }
-
 
 @end

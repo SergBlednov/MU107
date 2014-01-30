@@ -10,6 +10,7 @@
 #import "LoginViewController.h"
 
 @interface MapViewController ()
+@property (weak, nonatomic) IBOutlet UILabel *routeTitle;
 
 @end
 
@@ -21,9 +22,19 @@
     [super viewDidLoad];
     
     UIViewController *loginController = [self.storyboard instantiateViewControllerWithIdentifier:@"AuthNavigationController"];
-    
     [self.navigationController presentViewController:loginController animated:NO completion:nil];
 
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(addFavotireRoutes:)
+                                                 name:@"chosenRoute"
+                                               object:nil];
+}
+
+- (void)addFavotireRoutes:(NSNotification *)notification {
+    
+    NSMutableDictionary *userInfo = [[NSMutableDictionary alloc] init];
+    self.routeTitle.text  = [userInfo objectForKey:@"chosenRoute"];
+    NSLog(@"You have to add a favotite route! %@", self.routeTitle.text);
 
 }
 

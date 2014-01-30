@@ -12,6 +12,7 @@
 		D5394EF718925CBB00CFCBF1 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D5394EF618925CBB00CFCBF1 /* RegisterViewController.m */; };
 		D5394F0318927BC100CFCBF1 /* MySidePanelControllerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D5394F0218927BC100CFCBF1 /* MySidePanelControllerViewController.m */; };
 		D55A2AAC1893BDA300A1E9F3 /* ResetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D55A2AAB1893BDA300A1E9F3 /* ResetViewController.m */; };
+		D58B7985189A5223005F9406 /* MarshrutkiApi.m in Sources */ = {isa = PBXBuildFile; fileRef = D58B7984189A5223005F9406 /* MarshrutkiApi.m */; };
 		D5B416831892BDD500F04D60 /* RoutesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D5B416821892BDD500F04D60 /* RoutesViewController.m */; };
 		D5F80D801889841C0063E18D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5F80D7F1889841C0063E18D /* Foundation.framework */; };
 		D5F80D821889841C0063E18D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5F80D811889841C0063E18D /* CoreGraphics.framework */; };
@@ -55,6 +56,9 @@
 		D5394F0218927BC100CFCBF1 /* MySidePanelControllerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MySidePanelControllerViewController.m; path = Controller/MySidePanelControllerViewController.m; sourceTree = "<group>"; };
 		D55A2AAA1893BDA300A1E9F3 /* ResetViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ResetViewController.h; path = Controller/ResetViewController.h; sourceTree = "<group>"; };
 		D55A2AAB1893BDA300A1E9F3 /* ResetViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ResetViewController.m; path = Controller/ResetViewController.m; sourceTree = "<group>"; };
+		D58B7983189A5223005F9406 /* MarshrutkiApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MarshrutkiApi.h; path = Model/MarshrutkiApi.h; sourceTree = "<group>"; };
+		D58B7984189A5223005F9406 /* MarshrutkiApi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MarshrutkiApi.m; path = Model/MarshrutkiApi.m; sourceTree = "<group>"; };
+		D58B7986189A5744005F9406 /* Config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Config.h; sourceTree = "<group>"; };
 		D5B416811892BDD500F04D60 /* RoutesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RoutesViewController.h; path = Controller/RoutesViewController.h; sourceTree = "<group>"; };
 		D5B416821892BDD500F04D60 /* RoutesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RoutesViewController.m; path = Controller/RoutesViewController.m; sourceTree = "<group>"; };
 		D5F80D7C1889841C0063E18D /* MU107HW2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MU107HW2.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -223,6 +227,9 @@
 				D5F80DBA18898BAE0063E18D /* Route.m */,
 				D5F80DC018898D140063E18D /* Bus.h */,
 				D5F80DC118898D140063E18D /* Bus.m */,
+				D58B7983189A5223005F9406 /* MarshrutkiApi.h */,
+				D58B7984189A5223005F9406 /* MarshrutkiApi.m */,
+				D58B7986189A5744005F9406 /* Config.h */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -365,6 +372,7 @@
 				D5394EF318910E2200CFCBF1 /* MapViewController.m in Sources */,
 				D5B416831892BDD500F04D60 /* RoutesViewController.m in Sources */,
 				D5394EF718925CBB00CFCBF1 /* RegisterViewController.m in Sources */,
+				D58B7985189A5223005F9406 /* MarshrutkiApi.m in Sources */,
 				D55A2AAC1893BDA300A1E9F3 /* ResetViewController.m in Sources */,
 				D5F80D961889841C0063E18D /* LoginViewController.m in Sources */,
 				D5F80D901889841C0063E18D /* AppDelegate.m in Sources */,
