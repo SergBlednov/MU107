@@ -8,9 +8,11 @@
 
 #import "MapViewController.h"
 #import "LoginViewController.h"
+#import "Route.h"
 
 @interface MapViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *routeTitle;
+@property (nonatomic) Route *currentRoute;
 
 @end
 
@@ -25,17 +27,25 @@
     [self.navigationController presentViewController:loginController animated:NO completion:nil];
 
     [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(addFavotireRoutes:)
-                                                 name:@"chosenRoute"
+                                             selector:@selector(showenRoutes:)
+                                                 name:@"chosenRouteByClick"
                                                object:nil];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"★" style:UIBarButtonItemStyleBordered target:self action:@selector(selectedRoute)];
 }
 
-- (void)addFavotireRoutes:(NSNotification *)notification {
+- (void)showenRoutes:(NSNotification *)notification {
     
-    NSMutableDictionary *userInfo = [[NSMutableDictionary alloc] init];
-    self.routeTitle.text  = [userInfo objectForKey:@"chosenRoute"];
-    NSLog(@"You have to add a favotite route! %@", self.routeTitle.text);
+    self.currentRoute = [[notification userInfo] objectForKey:@"chosenRoute"];
+    self.title = self.currentRoute.title;
+    NSLog(@"You have chosen: %@", self.currentRoute.title);
+}
 
+- (void)selectedRoute {
+    
+    self.currentRoute.isFavorited = !self.currentRoute.isFavorited;    
+    self.navigationItem.rightBarButtonItem.title = @"☆";
+    NSLog(@"Your favorite route: %@", self.currentRoute.title);
+    
 }
 
 - (void)didReceiveMemoryWarning

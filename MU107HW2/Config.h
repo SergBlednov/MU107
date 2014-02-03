@@ -9,6 +9,6 @@
 #ifndef MU107HW2_Config_h
 #define MU107HW2_Config_h
 #define ROUTESURL @"http://marshrutki.com.ua/mu/routes.php"
-
+#define MENU_BACKGROUND_COLOR [UIColor colorWithRed:0.29f green:0.3f blue:0.36f alpha:1.f]
 
 #endif

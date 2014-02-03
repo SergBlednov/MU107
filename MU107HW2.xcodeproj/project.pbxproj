@@ -12,6 +12,7 @@
 		D5394EF718925CBB00CFCBF1 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D5394EF618925CBB00CFCBF1 /* RegisterViewController.m */; };
 		D5394F0318927BC100CFCBF1 /* MySidePanelControllerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D5394F0218927BC100CFCBF1 /* MySidePanelControllerViewController.m */; };
 		D55A2AAC1893BDA300A1E9F3 /* ResetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D55A2AAB1893BDA300A1E9F3 /* ResetViewController.m */; };
+		D56D756B189D5D170030B1B1 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D56D756A189D5D170030B1B1 /* MapKit.framework */; };
 		D58B7985189A5223005F9406 /* MarshrutkiApi.m in Sources */ = {isa = PBXBuildFile; fileRef = D58B7984189A5223005F9406 /* MarshrutkiApi.m */; };
 		D5B416831892BDD500F04D60 /* RoutesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D5B416821892BDD500F04D60 /* RoutesViewController.m */; };
 		D5F80D801889841C0063E18D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5F80D7F1889841C0063E18D /* Foundation.framework */; };
@@ -56,6 +57,7 @@
 		D5394F0218927BC100CFCBF1 /* MySidePanelControllerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MySidePanelControllerViewController.m; path = Controller/MySidePanelControllerViewController.m; sourceTree = "<group>"; };
 		D55A2AAA1893BDA300A1E9F3 /* ResetViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ResetViewController.h; path = Controller/ResetViewController.h; sourceTree = "<group>"; };
 		D55A2AAB1893BDA300A1E9F3 /* ResetViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ResetViewController.m; path = Controller/ResetViewController.m; sourceTree = "<group>"; };
+		D56D756A189D5D170030B1B1 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		D58B7983189A5223005F9406 /* MarshrutkiApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MarshrutkiApi.h; path = Model/MarshrutkiApi.h; sourceTree = "<group>"; };
 		D58B7984189A5223005F9406 /* MarshrutkiApi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MarshrutkiApi.m; path = Model/MarshrutkiApi.m; sourceTree = "<group>"; };
 		D58B7986189A5744005F9406 /* Config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Config.h; sourceTree = "<group>"; };
@@ -96,6 +98,7 @@
 			files = (
 				D5F80D821889841C0063E18D /* CoreGraphics.framework in Frameworks */,
 				D5F80D841889841C0063E18D /* UIKit.framework in Frameworks */,
+				D56D756B189D5D170030B1B1 /* MapKit.framework in Frameworks */,
 				D5F80D801889841C0063E18D /* Foundation.framework in Frameworks */,
 				7DF33E1AB11D4703B85E1CE6 /* libPods.a in Frameworks */,
 			);
@@ -146,6 +149,7 @@
 		D5F80D7E1889841C0063E18D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D56D756A189D5D170030B1B1 /* MapKit.framework */,
 				D5F80D7F1889841C0063E18D /* Foundation.framework */,
 				D5F80D811889841C0063E18D /* CoreGraphics.framework */,
 				D5F80D831889841C0063E18D /* UIKit.framework */,
@@ -283,6 +287,13 @@
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = "Sergey Blednov";
 				TargetAttributes = {
+					D5F80D7B1889841C0063E18D = {
+						SystemCapabilities = {
+							com.apple.iOS = {
+								enabled = 1;
+							};
+						};
+					};
 					D5F80D9C1889841C0063E18D = {
 						TestTargetID = D5F80D7B1889841C0063E18D;
 					};

@@ -14,6 +14,7 @@
     
     Route *route = [[Route alloc] init];
     route.title = attributes[@"route_title"];
+    route.price = attributes[@"route_price"];
     return route;
 }
 

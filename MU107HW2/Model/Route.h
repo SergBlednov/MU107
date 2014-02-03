@@ -11,6 +11,8 @@
 @interface Route : NSObject
 
 @property (strong, nonatomic) NSString *title;
+@property (nonatomic) NSString *price;
+@property (nonatomic) BOOL isFavorited;
 
 + (Route *)initRouteWithDictionary:(NSDictionary *)attributes;
 

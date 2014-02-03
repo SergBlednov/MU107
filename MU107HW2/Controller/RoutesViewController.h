@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <UIViewController+JASidePanel.h>
 
 @interface RoutesViewController : UITableViewController
 

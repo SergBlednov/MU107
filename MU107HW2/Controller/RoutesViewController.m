@@ -9,12 +9,14 @@
 #import "RoutesViewController.h"
 #import "Route.h"
 #import "MarshrutkiApi.h"
+#import <JASidePanelController.h>
 
 #import "MBProgressHUD.h"
 
 @interface RoutesViewController ()
 
 @property (strong, nonatomic) NSArray *routes;
+
 
 @end
 
@@ -23,6 +25,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.tableView.backgroundColor = MENU_BACKGROUND_COLOR;
+    
     [[MarshrutkiApi sharedClient] getRoutes:^(NSArray *routes, NSError *error) {
         self.routes = routes;
         [self.tableView reloadData];
@@ -41,25 +45,30 @@
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 2;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    if(section == 0) {
-        return 3;
-    } else {
-        return self.routes.count;
-    }
+    return self.routes.count;
+}
+
+- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
+    NSLog(@"%@", cell.subviews);
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"Cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
-    
     Route *route = (Route *)self.routes[indexPath.row];
+    
+    static NSString *CellIdentifier = @"Cell";
+    static NSString *FavCellIdentifier = @"FavCell";
+    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:route.isFavorited?FavCellIdentifier:CellIdentifier forIndexPath:indexPath];
+    
+
     cell.textLabel.text = route.title;
+    cell.detailTextLabel.text = route.price;
     return cell;
 }
 
@@ -68,8 +77,16 @@
     Route *route = (Route *)self.routes[indexPath.row];
     NSMutableDictionary *userInfo = [[NSMutableDictionary alloc] init];
     [userInfo setValue:route forKey:@"chosenRoute"];
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"chosenRoute" object:self userInfo:userInfo];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"chosenRouteByClick" object:self userInfo:userInfo];
+    [self.sidePanelController showCenterPanelAnimated:YES];
     
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+    
+    UIView *stub = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 20)];
+    stub.backgroundColor = MENU_BACKGROUND_COLOR;
+    return stub;
 }
 
 @end
