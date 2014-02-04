@@ -2,18 +2,28 @@
 //  Route.h
 //  MU107HW2
 //
-//  Created by Sergey Blednov on 1/17/14.
+//  Created by Sergey Blednov on 2/4/14.
 //  Copyright (c) 2014 Sergey Blednov. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
+#import <CoreData/CoreData.h>
 
-@interface Route : NSObject
 
-@property (strong, nonatomic) NSString *title;
-@property (nonatomic) NSString *price;
+@interface Route : NSManagedObject
+
+@property (nonatomic, retain) NSString * title;
+@property (nonatomic, retain) NSString * price;
 @property (nonatomic) BOOL isFavorited;
+@property (nonatomic, retain) NSSet *buses;
+@end
 
-+ (Route *)initRouteWithDictionary:(NSDictionary *)attributes;
+@interface Route (CoreDataGeneratedAccessors)
+
+- (void)addBusesObject:(NSManagedObject *)value;
+- (void)removeBusesObject:(NSManagedObject *)value;
+- (void)addBuses:(NSSet *)values;
+- (void)removeBuses:(NSSet *)values;
+- (Route *)initRouteWithDictionary:(NSDictionary *)attributes;
 
 @end

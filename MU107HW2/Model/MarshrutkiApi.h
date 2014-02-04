@@ -8,9 +8,14 @@
 
 #import <Foundation/Foundation.h>
 #import <AFNetworking.h>
+#import <CoreData/CoreData.h>
 #import "Route.h"
 
 @interface MarshrutkiApi : NSObject
+
+@property NSManagedObjectModel *objectModel;
+@property NSManagedObjectContext *context;
+@property NSPersistentStoreCoordinator *persistentStore;
 
 + (MarshrutkiApi *)sharedClient;
 - (void)getRoutes:(void (^)(NSArray *, NSError *))block params:(NSDictionary *)params;

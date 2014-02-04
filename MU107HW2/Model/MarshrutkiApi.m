@@ -16,14 +16,29 @@
     
     dispatch_once(&onceToken, ^{
         _sharedClient = [[MarshrutkiApi alloc] init];
+        
+        _sharedClient.objectModel = [NSManagedObjectModel mergedModelFromBundles:nil];
+        
+        NSString *storePath = [[_sharedClient applicationDocumentsDirectory] stringByAppendingPathComponent:@"Marshrutki.sqlite"];
+        
+        _sharedClient.persistentStore = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:_sharedClient.objectModel];
+        
+        NSError *error;
+        
+        [_sharedClient.persistentStore addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:[NSURL fileURLWithPath:storePath] options:nil error:&error];
+        _sharedClient.context = [[NSManagedObjectContext alloc] init];
+        _sharedClient.context.persistentStoreCoordinator = _sharedClient.persistentStore;
+        
     });
     
     return _sharedClient;
 }
 
+- (NSString *)applicationDocumentsDirectory {
+    return [NSSearchPathForDirectoriesInDomains(NSDocumentationDirectory, NSUserDomainMask, YES) lastObject];
+}
+                               
 - (void)getRoutes:(void (^)(NSArray *, NSError *))block params:(NSDictionary *)params {
-    
-
     
     void (^mySuccessBlock)(AFHTTPRequestOperation *operation, id responseObject) = ^(AFHTTPRequestOperation *operation, id responseObject) {
         NSArray *rawRoutes = (NSArray *)responseObject;

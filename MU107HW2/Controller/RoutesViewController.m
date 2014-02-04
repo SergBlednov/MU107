@@ -32,6 +32,7 @@
         [self.tableView reloadData];
     } params:nil];
 
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(favoritiesChanged) name:@"selectedRoute" object:nil];
 
 }
 
@@ -89,4 +90,25 @@
     return stub;
 }
 
+- (void)favoritiesChanged {
+//    self.routes = [self.routes sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2) {
+//    
+//    int value1 = [obj1 value] ;
+//    int value2 = [obj2 value];
+//    
+//    if ( value1 < value2 )
+//        return NSOrderedAscending;
+//    if ( value1 > value2 )
+//        return NSOrderedDescending;
+//    return NSOrderedSame;
+//}];
+    self.routes = [self.routes sortedArrayWithOptions:NSSortConcurrent usingComparator:^NSComparisonResult(id obj1, id obj2) {
+             return [obj1 isEqual:obj2];
+        }];
+    [self.tableView reloadData];
+}
+
+
 @end
+
+// testing commit

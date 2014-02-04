@@ -27,23 +27,28 @@
     [self.navigationController presentViewController:loginController animated:NO completion:nil];
 
     [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(showenRoutes:)
+                                             selector:@selector(shownRoutes:)
                                                  name:@"chosenRouteByClick"
                                                object:nil];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"★" style:UIBarButtonItemStyleBordered target:self action:@selector(selectedRoute)];
 }
 
-- (void)showenRoutes:(NSNotification *)notification {
+- (void)shownRoutes:(NSNotification *)notification {
     
     self.currentRoute = [[notification userInfo] objectForKey:@"chosenRoute"];
     self.title = self.currentRoute.title;
+    self.navigationItem.rightBarButtonItem.title = self.currentRoute.isFavorited?@"☆":@"★";
+    
     NSLog(@"You have chosen: %@", self.currentRoute.title);
+
 }
 
 - (void)selectedRoute {
     
     self.currentRoute.isFavorited = !self.currentRoute.isFavorited;    
     self.navigationItem.rightBarButtonItem.title = @"☆";
+    self.navigationItem.rightBarButtonItem.title = self.currentRoute.isFavorited?@"☆":@"★";
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"selectedRoute" object:nil];
     NSLog(@"Your favorite route: %@", self.currentRoute.title);
     
 }
