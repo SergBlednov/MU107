@@ -45,7 +45,7 @@
         NSMutableArray *routes = [[NSMutableArray alloc] init];
         
         for (NSDictionary *attributes in rawRoutes) {
-            [routes addObject:[Route initRouteWithDictionary:attributes]];
+//          [routes addObject:[Route initRouteWithDictionary:attributes]];
         }
         if (block != nil) {
             block(routes, nil);

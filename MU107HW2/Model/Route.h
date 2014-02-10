@@ -24,6 +24,5 @@
 - (void)removeBusesObject:(NSManagedObject *)value;
 - (void)addBuses:(NSSet *)values;
 - (void)removeBuses:(NSSet *)values;
-- (Route *)initRouteWithDictionary:(NSDictionary *)attributes;
 
 @end
