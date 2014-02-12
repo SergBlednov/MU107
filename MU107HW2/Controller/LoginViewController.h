@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <FacebookSDK.h>
+#import "AppDelegate.h"
 
 @interface LoginViewController : UIViewController
 
