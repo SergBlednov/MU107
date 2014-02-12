@@ -18,21 +18,21 @@
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
 	<string>1.0</string>
-	<key>FacebookAppID</key>
-	<string>501562373288665</string>
-	<key>FacebookDisplayName</key>
-	<string>MU107HW2</string>
 	<key>CFBundleURLTypes</key>
 	<array>
 		<dict>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>fb501562373288665</string>
+				<string>fb1481041512123483</string>
 			</array>
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
 	<string>1.0</string>
+	<key>FacebookAppID</key>
+	<string>1481041512123483</string>
+	<key>FacebookDisplayName</key>
+	<string>MU107HW2</string>
 	<key>LSApplicationCategoryType</key>
 	<string></string>
 	<key>LSRequiresIPhoneOS</key>
